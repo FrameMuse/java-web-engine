@@ -15,7 +15,7 @@ public class View extends Handler {
       super.response = Document.read(path);
       super.status = 200;
     } catch (FileNotFoundException error) {
-      super.response = "Routed file not found";
+      super.response = "Routed file " + path + " not found";
       super.status = 404;
     } catch (Exception error) {
       super.response = "Internal server error";
@@ -25,7 +25,7 @@ public class View extends Handler {
 
   public static class Document {
     public static String read(String path) throws IOException {
-      File file = new File(path);
+      File file = new File("src/app/views/" + path + ".view.html");
       Scanner reader = new Scanner(file);
       // while (reader.hasNextLine()) {
       // String line = reader.next();
