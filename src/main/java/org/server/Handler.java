@@ -7,8 +7,8 @@ import com.sun.net.httpserver.HttpHandler;
 import com.sun.net.httpserver.HttpExchange;
 
 public class Handler implements HttpHandler {
-  private int status;
-  private String response;
+  protected int status;
+  protected String response;
 
   public Handler(int status, String response) {
     this.status = status;
