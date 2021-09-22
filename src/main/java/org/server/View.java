@@ -3,11 +3,10 @@ package org.server;
 import java.io.File;
 import java.io.IOException;
 import java.io.FileNotFoundException;
-import java.nio.file.Path;
 import java.util.Scanner;
 
 public class View extends Handler {
-  public View(Path path) {
+  public View(String path) {
     super(0, "");
 
     try {
@@ -23,8 +22,8 @@ public class View extends Handler {
   }
 
   public static class Document {
-    public static String read(Path path) throws IOException {
-      File file = new File(path.toString());
+    public static String read(String path) throws IOException {
+      File file = new File(path);
       Scanner reader = new Scanner(file);
       // while (reader.hasNextLine()) {
       // String line = reader.next();
