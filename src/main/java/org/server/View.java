@@ -5,6 +5,8 @@ import java.io.IOException;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
+import org.server.Routing.Handler;
+
 public class View extends Handler {
   public View(String path) {
     super(0, "");
