@@ -10,7 +10,7 @@ public class Server {
     HttpServer server = HttpServer.create(new InetSocketAddress(8000), 0);
     HttpRouter router = new HttpRouter(server);
 
-    router.route("/", new View("/src/app/index.html"));
+    router.route("/", new View("index"));
 
     server.setExecutor(null);
     server.start();
