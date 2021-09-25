@@ -1,18 +1,25 @@
 package org.server;
 
 import java.net.InetSocketAddress;
+
 import com.sun.net.httpserver.HttpServer;
-import org.server.Routing.HttpRouter;
+
+import org.server.Router.HttpRouter;
+import org.routes.OriginRoutes;
 
 public class Server {
-
   public static void main(String[] args) throws Exception {
-    HttpServer server = HttpServer.create(new InetSocketAddress(8000), 0);
+    HttpServer server = HttpServer.create(new InetSocketAddress(8000), 1);
     HttpRouter router = new HttpRouter(server);
 
-    router.route("/", new View("index"));
+    // OriginRoutes
 
-    server.setExecutor(null);
     server.start();
+  }
+
+  public static class Executor {
+    public void execute(Runnable r) {
+      r.run();
+    }
   }
 }

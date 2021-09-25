@@ -1,8 +1,8 @@
-package org.server.Routing;
+package org.server.Router;
 
 import com.sun.net.httpserver.HttpServer;
 
-import org.server.View;
+import org.server.Viewer.View;
 
 public class HttpRouter {
   private HttpServer server;
