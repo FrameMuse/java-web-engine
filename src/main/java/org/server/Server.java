@@ -4,17 +4,15 @@ import java.net.InetSocketAddress;
 
 import com.sun.net.httpserver.HttpServer;
 
-import org.server.Router.HttpRouter;
-import org.routes.OriginRoutes;
+import org.server.Router.Handler;
 
 public class Server {
   public static void main(String[] args) throws Exception {
     HttpServer server = HttpServer.create(new InetSocketAddress(8000), 1);
-    HttpRouter router = new HttpRouter(server);
 
-    // OriginRoutes
-
+    server.createContext("/", new Handler());
     server.start();
+
     Server.displayServerStartup();
   }
 
