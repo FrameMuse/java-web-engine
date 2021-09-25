@@ -15,11 +15,15 @@ public class Server {
     // OriginRoutes
 
     server.start();
+    Server.displayServerStartup();
   }
 
-  public static class Executor {
-    public void execute(Runnable r) {
-      r.run();
-    }
+  private static void displayServerStartup() {
+    System.out.println("  +---------------------------------------+");
+    System.out.println("  |                                       |");
+    System.out.println("  |           Server is running           |");
+    System.out.println("  |  Your website: http://localhost:8000  |");
+    System.out.println("  |                                       |");
+    System.out.println("  +---------------------------------------+");
   }
 }
