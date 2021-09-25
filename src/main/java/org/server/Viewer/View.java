@@ -1,18 +1,18 @@
 package org.server.Viewer;
 
 import java.io.FileNotFoundException;
+import java.io.IOException;
 
 import org.server.Router.Handler;
 
 public class View extends Handler {
-  public View(String path) {
-    try {
-      Document document = new Document("src/app/views/" + path + ".view.html");
-      this.send(200, document.read());
-    } catch (FileNotFoundException error) {
-      this.send(404, error.getMessage());
-    } catch (Exception error) {
-      this.send(500, "ViewError: " + error.getMessage());
-    }
+  private Document document;
+
+  public View(String path) throws FileNotFoundException {
+    this.document = new Document("src/app/views/" + path + ".view.html");
+  }
+
+  public String read() throws IOException {
+    return this.document.read();
   }
 }
