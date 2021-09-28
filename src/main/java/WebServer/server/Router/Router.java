@@ -4,10 +4,10 @@ import com.sun.net.httpserver.HttpServer;
 
 import org.server.Viewer.View;
 
-public class HttpRouter {
+public class Router {
   private HttpServer server;
 
-  public HttpRouter(HttpServer server) {
+  public Router(HttpServer server) {
     this.server = server;
   }
 

@@ -19,7 +19,7 @@ public class Handler implements HttpHandler {
 
   @Override
   public void handle(HttpExchange request) throws IOException {
-    request.getProtocol();
+    request.request.getProtocol();
     request.sendResponseHeaders(this.status, this.response.length());
     OutputStream os = request.getResponseBody();
     os.write(this.response.getBytes());
