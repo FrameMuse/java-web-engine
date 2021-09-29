@@ -1,4 +1,4 @@
-package org.server.Viewer;
+package org.WebServer.server.Viewer;
 
 import java.io.File;
 import java.io.FileNotFoundException;

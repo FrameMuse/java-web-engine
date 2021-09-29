@@ -1,9 +1,9 @@
-package org.server.Viewer;
+package org.WebServer.server.Viewer;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
-import org.server.Router.Handler;
+import org.WebServer.server.Router.Handler;
 
 public class View extends Handler {
   private Document document;
